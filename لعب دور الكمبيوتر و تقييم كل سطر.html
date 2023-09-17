@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>لعب دور الكمبيوتر و تقييم كل سطر</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">لعب دور الكمبيوتر و تقييم كل سطر</h1>
+        <div class="content">
+            <p>
+                مهارة لعب دور الكمبيوتر والمرور على كل سطر ومحاولة معرفة ماذا سوف 
+                يحدث مفيدة جدا خاصة عندما تكون في عملية ال 
+                debugging
+            </p>
+            <p>
+                الق نظرة على الكود الموالي: 
+            </p>
+            <pre><code>
+year = int(input("What's your year of birth?: "))
+if year > 1980 and year < 1994;
+    print("You are a millenial.")
+elif year > 1994:
+    print("You are Gen Z.")
+            </code></pre>
+            <p>
+                نحن نسأل المستخدم عن العام الذي ولد فيه ثم بناءا عليه نحدد ان 
+                كان 
+                millenial
+                او 
+                Gen Z
+                باستخدام عبارة 
+                if 
+                عادية
+                ولكن ماذا تتوقع سوف يحدث لو ادخلت العام 
+                1994
+                ؟
+            </p>
+            <p>
+                الاجابة هي انه لن يقوم بطباعة اي شيء في الشاشة, هذا هو ال 
+                bug 
+                لدرس اليوم 
+            </p>
+            <p>
+                اريد منك ان تلعب دور الكمبيوتر وتمر على كل سطر وتحاول معرفة 
+                اين الخطأ وتصلحه
+            </p>
+            <p>
+                سوف افرض ان المستخدم ادخل القيمة 
+                1994
+                اذن قيمة المتغير 
+                year 
+                هي
+                1994
+                والان سوف اتحقق من الشروط, هل
+                1994 
+                اكبر من 
+                1980
+                ؟
+                نعم اذن سوف تقيم ك 
+                True
+                اذن انتقل الى الشرط التالي 
+                هل 
+                1994
+                اقل من 
+                1994
+                لا ليس اقل اذن سوف تقيم ك 
+                False
+                اذن 
+                True and False 
+                تقيم ك 
+                False
+                اذن انتقل الى عبارة ال 
+                elif 
+                هل 
+                1994
+                اكبر من 
+                1994
+                الاجابة هي لا 
+                اذن الشرط يقيم الى 
+                False 
+                ولن يتم تنفيذ التعليمات داخلها
+                ولم يتبقى تعليمات اخرى اذن سوف ينهي البرنامج من دون 
+                تنفيذ اي تعليمة طباعة وهذا ما حدث
+            </p>
+            <pre><code>
+year = 1994
+if True and False:
+    print("You are a millenial.")
+elif False:
+    print("You are Gen Z.")
+            </code></pre>
+            <p>
+                اذن المشكل كان انه لا يوجد شرط يمسك الحالة عندما يكون العام 
+                1994
+                والحل ببساطة اضافة علامة 
+                =
+                لاحد الشروط على حسب ان كنت تريد حساب عام 
+                1994
+                ك 
+                Gen Z 
+                او 
+                Millenial
+            </p>
+            <pre><code>
+year = int(input("What's your year of birth?: "))
+if year > 1980 and year < 1994;
+    print("You are a millenial.")
+elif year >= 1994:
+    print("You are Gen Z.")
+            </code></pre>
+            <pre><code>
+What's your year of birth?: 1994
+You are Gen Z.
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
