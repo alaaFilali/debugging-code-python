@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>استعمال عبارة الطباعة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">استعمال عبارة الطباعة</h1>
+        <div class="content">
+            <p>
+                انت كمبرمج ربما ليس دلك الكثير من الاصدقاء ولكن عبارة الطباعة بالتاكيد
+                هي صديقك الذي تستطيع الوثوق به والاعتماد عليه في كل وقت, ربما لن تساعدك
+                في مشاكلك مع علاقتك الاجتماعية او المشاكل العائلية ولكنها سوف تساعدك
+                في اصلاح الاخطاء في الكود الخاص بك.
+            </p>
+            <p>
+                القي نظرة على هذا الكود:
+            </p>
+            <pre><code>
+pages = 0
+word_per_page = 0
+pages = int(input("Number of pages: "))
+word_per_page == int(input("Number of words per page: "))
+total_words = pages * word_per_page
+print(total_words)
+            </code></pre>
+            <p>
+                حاول استعمال عبارة الطباعة وقم بايجاد الخطأ وقم باصلاحه.
+            </p>
+            <p>
+                لدينا عدد الصفحات وعدد الكلمات في الصفحة الواحدة ونحاول حساب عدد
+                الكلمات الكلي في هذا الكتاب ولكن عند تشغيل البرنامج هذه نتيجته:
+            </p>
+            <pre><code>
+Number of pages: 45
+Number of words per page: 250
+0
+            </code></pre>
+            <p>
+                يخبرنا ان عدد الكلمات الكلي هو
+                0
+                ماذا يحدث هنا؟
+            </p>
+            <p>
+                سوف استعمل عبارات طباعة لاعرف القيم التي تأخذها المتغيرات من
+                المستخدم لاعرف لماذا نتيجة تلك العلمية الحسابية
+                0
+            </p>
+            <pre><code>
+pages = 0
+word_per_page = 0
+pages = int(input("Number of pages: "))
+word_per_page == int(input("Number of words per page: "))
+total_words = pages * word_per_page
+print(f"pages = {pages}")
+print(f"word_per_page = {word_per_page}")
+print(total_words)
+                            </code></pre>
+            <pre><code>
+Number of pages: 45
+Number of words per page: 250
+pages = 45
+word_per_page = 0
+0
+                            </code></pre>
+            <p>
+                ارى ان قيمة المتغير 
+                pages 
+                هي التي ادخلتها 
+                45
+                بينما ادخلت العدد 
+                250
+                لعدد الكلمات في الصفحة ولكنه يخبرني ان عددها هو 
+                0
+                و صفر في اي عدد يساوي 
+                0
+                وهذا هو سبب المشكل
+            </p>
+            <p>
+                اذن المشكل له علاقة بالمتغير 
+                word_per_page
+                فلو نلقي نظرة على السطر الذي وضعنا فيه دالة 
+                input 
+                لنسأل المستخدم عن عدد الكلمات في الصفحة نرى اين هو المشكل
+            </p>
+            <pre><code>
+word_per_page == int(input("Number of words per page: "))
+            </code></pre>
+            <p>
+                حاول ايجاد الخطأ واصلاحه.
+            </p>
+            <p>
+                والمشكل هو استعمال اثنين من 
+                == 
+                بدل واحدة 
+                لانه عندما نستعمل واحدة مانريده هو وضع القيمة على اليمين في المتغير 
+                على اليسار اي ما يدخله المستخدم في المتغير 
+                word_per_page
+                ولكن اثنان علامة المساوات تعني التحقق من المساوات بين الطرف 
+                على اليمين واليسار اي انه يتحقق ان كان العدد الذي ادخله 
+                المستخدم اي 
+                250
+                يساوي 
+                0 
+                القيمة السابقة للتغير 
+                وسوف العبارة الى 
+                False 
+                ولن يحدث شيء لاننا لا نستعمل تلك النتيجة و لاتأثر على اي شيء, فقط 
+                قم بحذف علامة تساوي واحدة وسوف نصلح الخطأ
+            </p>
+            <pre><code>
+pages = 0
+word_per_page = 0
+pages = int(input("Number of pages: "))
+word_per_page = int(input("Number of words per page: "))
+total_words = pages * word_per_page
+print(f"pages = {pages}")
+print(f"word_per_page = {word_per_page}")
+print(total_words)
+    </code></pre>
+<pre><code>
+Number of pages: 45
+Number of words per page: 250
+pages = 45
+word_per_page = 250
+11250
+    </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
