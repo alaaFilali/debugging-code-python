@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>اصلاح الاخطاء ومراقبة الخطوط الحمراء</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">اصلاح الاخطاء ومراقبة الخطوط الحمراء</h1>
+        <div class="content">
+            <p>
+                النصيحة و ال
+                tip
+                التالية واضحة وهي عندما يخبرك محرر الاكواد
+                code editor
+                بوجود اخطاء قم باصلاحها قبل الاكمال في كتابة الكود
+            </p>
+            <pre><code>
+age = input("How old are you?: ")
+if age > 18:
+print("You can drive at age {age}")
+            </code></pre>
+            <p>
+                لو تضع هذا الكود في محرر اكواد حقيقي سوف يعطيك
+                error
+                وسوف ترى خط احمر تحت عبارة الطباعة ولو تضع الفأرة فوقها
+                سوف يخبرك برسالة الخطأ ويخبرك ماالخطأ
+                والخطأ هنا انه لا يوجد
+                indentation
+                قبل عبارة الطباعة حتى تكون داخل عبارة الشرط
+                if
+                ولكن عندما تشغل البرنامج سوف يعطيك
+                error
+                اخر عند محاولة ادخال عمرك وهو من نوع
+                TypeError
+                ولكن هذه المرة هذا ال
+                error
+                لايظهر في محرر الاكواد
+                editor
+                عندما كتبنا الكود بل يظهر فقط بناءا على القيمة التي ادخلناها في
+                ال
+                console
+            </p>
+            <p>
+                كيف نحل هذا ال
+                error
+                ؟
+                اسهل طريقة لفعل ذلك هي نسخ عبارة الخطأ والبحث عن حل في
+                google
+                او
+                stackoverflow
+                وسوف تجد اناس قد صادفو نفس المشكل واناس اخرين اجابوهم بالحل الصحيح
+                وهو في هذه الحالة عليك تحويل القيمة
+                التي يدخلها المستخدم في ال
+                console
+                لانها عبارة عن
+                string
+                الى
+                int
+                لكي نستطيع القيام بالعمليات الرياضية وفي حالتنا رمز اكبر من
+                >
+            </p>
+            <pre><code>
+age = int(input("How old are you?: "))
+if age > 18:
+    print("You can drive at age {age}")
+            </code></pre>
+            <pre><code>
+How old are you?: 21
+You can drive at age {age}
+            </code></pre>
+            <p>
+                الان بعد ماذهب ال
+                error
+                بعيدا ولكن عبارة الطباعة لاتعمل كما اريدها انا وهذا النوع من الاخطاء مزعج
+                جدا لحله لانه لا توجد خطوط حمراء ولا رسائل يمكنك نسخها يجب ان تعتمد على
+                فهمك وماتملك من معلومات ومهاراتك كمبرمج والحل هنا هو لكي يظهر العمر
+                في الشاشة يجب ان نحول العبارة الى
+                f-string
+                داخل الدالة
+                print
+                حتى يتم ادراج قيمة المتغير
+                age
+                وليس الكلمة
+                age
+                في حد ذاتها
+            </p>
+            <pre><code>
+age = int(input("How old are you?: "))
+if age > 18:
+    print(f"You can drive at age {age}")
+            </code></pre>
+            <pre><code>
+How old are you?: 21
+You can drive at age 21
+                            </code></pre>
+            <p>
+                كل ماتحل اخطاء اكثر كل ما تصبح جيد في حلها.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
