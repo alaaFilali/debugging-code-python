@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        اصلاح اخطاء تمرين
+        FizzBuzz
+    </title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            اصلاح اخطاء تمرين
+            FizzBuzz
+        </h1>
+        <div class="content">
+            <p>
+                التعليمات:
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        اقرأ الكود جيدا
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        ابحث عن الخطأ
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        عدل على الكود واصلح الخطأ
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        ممنوع نسخ ولصق حل من جهة اخرى
+                    </p>
+                </li>
+            </ul>
+            <p>
+                هذا البرنامج سوف يقوم بطباعة كل الاعداد من 
+                1
+                الى 
+                100
+                بالترتيب
+                فاذا كان العدد يقبل القسمة على 
+                3
+                اذن سوف يطبع الجملة 
+                Fizz
+                بدل العدد 
+                واذا كان العدد يقبل القسمة على 
+                5
+                سوف يقوم بطباعة الجملة 
+                Buzz
+                اما اذا كان يقبل القسمة على 
+                3
+                و 
+                5
+                معا اذن سوف يقوم بطباعة الجملة 
+                FizzBuzz
+            </p>
+            <pre><code>
+for number in range(1, 101):
+    if number % 3 == 0 or number % 5 == 0:
+        print("FizzBuzz")
+    if number % 3 == 0:
+        print("Fizz")
+    if number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                هناك اكثر من خطأ في الكود وسوف نصلحهم واحد بواحد, فلو نشغل البرنامج 
+                سوف نلاحظ انه لا يعمل كما نريد نحن مثلا في مكان العدد 
+                3
+                هناك الجملة 
+                FizzBuzz
+                بدل 
+                Fizz 
+                ونفس الشيئ مع العدد 
+                5
+                قام بطباعة الجملة 
+                FizzBuzz
+                بدل 
+                Buzz 
+            </p>
+            <p>
+                الجملة 
+                FizzBuzz 
+                لا يجب ان تظهر الا اذا كان العدد يقبل القسمة على 
+                3
+                و 
+                5
+                معا
+            </p>
+            <p>
+                باستعمال عبارة 
+                print 
+                سوف تساعدنا كثيرا وسوف تظهر لنا الخطأ
+            </p>
+            <pre><code>
+for number in range(1, 101):
+    print(number)
+    if number % 3 == 0 or number % 5 == 0:
+        print("FizzBuzz")
+    if number % 3 == 0:
+        print("Fizz")
+    if number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
+        </code></pre>
+        <p>
+            بعد تشغيل البرنامج نلاحظ ان للعدد الواحد يتم طباعة اكثر من عبارة, سوف 
+            نبدأ بالمشكل الاول وهو عبارة 
+            FizzBuzz
+            المشكل هو انه يجب ان يكون العدد يقبل القسمة على 
+            3
+            و
+            5
+            وليس 
+            أو
+            5
+            اذن في مكان 
+            or 
+            نضع 
+            and
+            والمشكل الثاني هو ان عبارات ال 
+            if 
+            منفصلة عن بعضها البعض 
+            اي يمكن للعدد ان يقبل القسمة على 
+            3
+            و 
+            5
+            و 
+            15
+            في نفس الوقت وسوف يتم طباعة جميع الجمل اضافة الى ان عبارة 
+            else 
+            تنفذ فقط في حالة عدم تحقق شرط ال
+            if 
+            الاخيرة وهذا مالانريده نحن, نحن نريد ان يتم التحقق من الشرط الاول 
+            ان لم يتحقق في تلك الحالة ننتقل الى الشرط الثاني 
+            والثالث ثم ان لم يتحقق اي شرط نذهب الى عبارة 
+            else 
+            اذن نحولها جميعا الى 
+            elif 
+        </p>
+        <pre><code>
+for number in range(1, 101):
+    if number % 3 == 0 and number % 5 == 0:
+        print("FizzBuzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
+                    </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>

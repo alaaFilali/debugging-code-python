@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>اصلاح اخطاء تمرين السنة الكبيسة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">اصلاح اخطاء تمرين السنة الكبيسة</h1>
+        <div class="content">
+            <p>
+                التعليمات:
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        اقرأ الكود جيدا
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        ابحث عن الخطأ
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        عدل على الكود واصلح الخطأ
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        ممنوع نسخ ولصق حل من جهة اخرى
+                    </p>
+                </li>
+            </ul>
+            <pre><code>
+year = input("Which year do you want to check? ")
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("Leap year.")
+        else:
+            print("Not leap year.")
+    else:
+        print("Leap year.")
+else:
+    print("Not leap year.")
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                عندما تشغل البرنامج وتدخل سنة ما 
+                2024
+                سوف تحصل على 
+                error 
+                من نوع 
+                TypeError
+                وهذا النوع من الاخطاء يظهر عندما تحاول فعل شيئ ما باستخدام
+                نوع البيانات الخاطئ في حالتنا هنا نحن نحاول حساب باقي قسمة 
+                year 
+                على 
+                4
+                والمتغير 
+                year 
+                يحمل مخرج الدالة 
+                input 
+                الذي يدخله المستخدم من ال 
+                console
+                وهو في الحقيقة عدد ولكن نوعه هو 
+                string 
+                ويمكنك التحقق من نوعه باستخدام الدالة 
+                type 
+                مع 
+                4
+                الذي هو عبارة عن عدد من نوع 
+                int
+                فلا يمكنك قسمة سلسلة حروف على عدد 
+                لذلك الحل هو تحويل المتغير 
+                year 
+                الى
+                int 
+            </p>
+            <pre><code>
+year = int(input("Which year do you want to check? "))
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("Leap year.")
+        else:
+            print("Not leap year.")
+    else:
+        print("Leap year.")
+else:
+    print("Not leap year.")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
